@@ -1,0 +1,1 @@
+### Simple generator of codes for personal use
