@@ -355,13 +355,12 @@ document.getElementById("searchterm").addEventListener("keypress", function (eve
 
 function getResult() {
     var input = document.getElementById("searchterm").value;
-    var result = search(input);
+    var result = search(String(input).toUpperCase());
     document.getElementById("resulttext").innerHTML = result;
 }
 
 function search(input) {
     var result = "Kombinacija ne postoji ili je nepravilno napisana!";
-    console.log('eVisitorData', eVisitorData);
     eVisitorData.forEach(function (column) {
         if (input.includes(Object.keys(column)[0])) {
             if (Object.values(column)[0][Number(input.slice(-2)) - 1] !== undefined) {
